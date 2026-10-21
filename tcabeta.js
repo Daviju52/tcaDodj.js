@@ -7,8 +7,7 @@ class jogador {
   }
 }
 
-function termo() {
-  let vdapalavra = [
+ let vdapalavra = [
     "amigo",
     "barco",
     "carro",
@@ -60,17 +59,14 @@ function termo() {
     "danca",
   ];
 
-
-
-
-  { // sorteio da palavra do jogo
+// sorteio da palavra do jogo
     let ind = Math.trunc(Math.random() * vdapalavra.length - 1);
     let palavrasenha = vdapalavra[ind];
     palavrasenha.toUpperCase;
-  }
+  // sorteio da palavra do jogo
 
-
-
+function termo() {
+ 
 
 
   let lcr = "";
@@ -81,18 +77,7 @@ function termo() {
   let palavrasjogadas = [];
   
 
-
-
-
-
-
-
-
-
-
-
-
-  { // verificação das letras das palavras do jogo
+  // verificação das letras das palavras do jogo
     let alfabeto = [
     { letra: "a", numero: 0 },
     { letra: "b", numero: 0 },
@@ -156,18 +141,7 @@ function termo() {
       testeln.push(letnum4);
     }
   }
-}
-
-
-
-
-
-
-
-
-
-
-
+// verificação das letras das palavras do jogo
 
 
   for (let i = 0; i < 5; i++) {
@@ -198,7 +172,7 @@ function termo() {
      
      
      
-      { // verificação das palavras
+     // verificação das palavras
       for (let ind = 0; ind < 5; ind++) {
         if (palavrasenha.includes(testeln[ind].letra)) {
           lcr += testeln[ind].numero;
@@ -212,7 +186,7 @@ function termo() {
           lcc += "-";
         }
       }
-    }
+    // verificação das palavras
 
 
 
