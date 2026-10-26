@@ -69,6 +69,23 @@ function sortpalavra(vetor) {
 }
 //palavra senha
 let segredo = sortpalavra(vdapalavra)
+class alfa {
+ constructor (leta, Nleta) {
+  this.leta = leta
+  this.Nleta= Nleta
+ }
+}
+
+for(let t = 0; t < 6; t++){
+  for(let p = 0; p < 6; p++){
+    if (segredo[t]==segredo[p]){
+    let yt = 0;
+    yt++
+    }
+    
+ }
+}
+
 //numero da tentativa = n
 // let n = 0;
 function button1(){
@@ -97,6 +114,7 @@ function verificar(n) {
       inp[i][j] = document.getElementById(`id${i}${j}`)
       letra[i][j] = document.getElementById(`id${i}${j}`).value
       palavra += letra[i][j]
+      palavra.toUpperCase;
       console.log(palavra)
     }
     Vetorpalavra.push(palavra);
@@ -112,7 +130,7 @@ function verificar(n) {
     for (let i = 0; i < 5; i++) {
       if (segredo[i] == palavra[i]) {
         inp[n][i].style.background = "green"
-      } else if (segredo.includes(palavra[i])) {
+      } else if ((segredo.includes(palavra[i]))&&()) {
         inp[n][i].style.background = "yellow"
       } else {
         inp[n][i].style.background = "red"
