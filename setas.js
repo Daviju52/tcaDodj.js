@@ -17,15 +17,23 @@ for (let i = 0; i < 5; i++) {
 }
 
 campos.forEach((campo, indice) => {
-  campo.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight' && indice < campos.length - 1) {
+  campo.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight" && indice < campos.length - 1) {
       event.preventDefault();
       focarNoFinal(campos[indice + 1]);
     }
 
-    if (event.key === 'ArrowLeft' && indice > 0) {
+    if (event.key === "ArrowLeft" && indice > 0) {
       event.preventDefault();
       focarNoFinal(campos[indice - 1]);
     }
   });
 });
+
+let r = 1;
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+      document.querySelector(`#button-addon${r}`).click();
+      r++;
+    }
+  });
