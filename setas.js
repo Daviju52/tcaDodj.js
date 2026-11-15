@@ -30,10 +30,3 @@ campos.forEach((campo, indice) => {
   });
 });
 
-let r = 1;
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-      document.querySelector(`#button-addon${r}`).click();
-      r++;
-    }
-  });

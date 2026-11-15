@@ -7,6 +7,17 @@ class jogador {
   }
 }
 
+let E = 1;
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+      document.querySelector(`#button-addon${E}`).click();
+      E++;
+      if (E == 6){
+        E = 1
+      }
+    }
+  });
+
 let vdapalavra = [
   "amigo",
   "barco",
@@ -86,6 +97,10 @@ function comeco(){
 segredo = sortpalavra(vdapalavra);
 botaoC.disabled = true;
 botao1.disabled = false;
+botao2.disabled = true;
+botao3.disabled = true;
+botao4.disabled = true;
+botao5.disabled = true;
 
 return segredo
 }
@@ -157,20 +172,32 @@ function verificar(n) {
 
   if (true) {
     palavra = Vetorpalavra[n];
-    vezap = vezapO;
-    let vezr = [vezap[0].Nleta, vezap[1].Nleta, vezap[2].Nleta, vezap[3].Nleta, vezap[4].Nleta]
+    let contadorL = [vezap[0].leta, vezap[1].leta, vezap[2].leta, vezap[3].leta, vezap[4].leta]
+    let contador = [vezap[0].Nleta, vezap[1].Nleta, vezap[2].Nleta, vezap[3].Nleta, vezap[4].Nleta]
     for (let i = 0; i < 5; i++) {
       if (segredo[i] == palavra[i]) {
         inp[n][i].style.background = "green";
-        vezr[i] = vezr[i] - 1;
+        contador[i] = contador[i] - 1;
       } else if (!segredo.includes(palavra[i])) {
         inp[n][i].style.background = "red";
       } else {
-       if ((((0 >= vezr[i]))&&(!((segredo[0] == palavra[0])||(segredo[1] == palavra[1])||(segredo[2] == palavra[2])||(segredo[3] == palavra[3])||(segredo[3] == palavra[3])||(segredo[4] == palavra[4]))))){
-          inp[n][i].style.background = "red";
-        } else {
+       if (palavra[i]==contadorL[0] && 0 < contador[0]){
           inp[n][i].style.background = "yellow";
-          vezr[i] = vezr[i] - 1;
+          contador[0] = contador[0] - 1;
+       } else if (palavra[i]==contadorL[1] && 0 < contador[1]){
+          inp[n][i].style.background = "yellow";
+          contador[1] = contador[1] - 1;
+       } else if (palavra[i]==contadorL[2] && 0 < contador[2]){
+          inp[n][i].style.background = "yellow";
+          contador[2] = contador[2] - 1;
+       } else if (palavra[i]==contadorL[3] && 0 < contador[3]){
+          inp[n][i].style.background = "yellow";
+          contador[3] = contador[3] - 1;
+       } else if (palavra[i]==contadorL[4] && 0 < contador[4]){
+          inp[n][i].style.background = "yellow";
+          contador[4] = contador[4] - 1;
+        } else {
+          inp[n][i].style.background = "red";
         }
       }
     }
@@ -178,6 +205,7 @@ function verificar(n) {
   if (Vetorpalavra[n] == segredo) {
     alert(`voce ganhou`);
     botaoC.disabled = false
+    E = 1
    // jogador1.jogosganhos++;
   }
   if (palavra != segredo && n == 4) {
@@ -186,4 +214,5 @@ function verificar(n) {
   }
   n++;
 }
-// jogador1.jogosjogados = jogador1.jogosganhos + jogador1.jogosperdidos;
+
+// jogador1.jogosjogados = jogador1.jogosganhos + jogador1.jogosperdidos;(((segredo[0] == palavra[0])||(segredo[1] == palavra[1])||(segredo[2] == palavra[2])||(segredo[3] == palavra[3])||(segredo[3] == palavra[3])||(segredo[4] == palavra[4])))))
