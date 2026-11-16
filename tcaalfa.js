@@ -157,7 +157,6 @@ function verificar(n) {
     vezap.push(novalfas);
   }
   let vezapO = vezap;
-  console.log(vezap);
   for (let i = 0; i <= n; i++) {
     for (let j = 0; j < 5; j++) {
       inp[i][j] = document.getElementById(`id${i}${j}`);
